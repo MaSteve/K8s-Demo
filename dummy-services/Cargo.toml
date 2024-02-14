@@ -1,0 +1,22 @@
+[package]
+name = "dummy-services"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "dummy_services_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "dummy-service"
+path = "src/bin/dummy_service.rs"
+
+[[bin]]
+name = "consumer-service"
+path = "src/bin/consumer_service.rs"
+
+[dependencies]
+actix-web = "4.4"
+reqwest = { version = "0.11", default-features = false, features = ["rustls-tls"] }
+tokio = { version = "1.35", features = ["full"] }
+serde_json = "1.0"
